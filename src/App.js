@@ -10,6 +10,7 @@ import SignInAndSignUpPage from "./components/sign-in-and-sign-up/sign-in-and-si
 import {auth, createUserProfileDocument} from './firebase/firebase.utils'
 import {setCurrentUser} from './redux/user/user.actions'
 import {selectCurrentUser} from "./redux/user/user.selectors";
+import {selectCollectionsForPreview} from "./redux/shop/shop.selector";
 import {createStructuredSelector} from "reselect";
 
 
@@ -29,7 +30,7 @@ class App extends React.Component {
           });
         });
       }
-      setCurrentUser(userAuth)
+      setCurrentUser(userAuth);
     });
   }
 
